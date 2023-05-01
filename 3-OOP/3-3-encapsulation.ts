@@ -50,4 +50,27 @@
   console.log(coffeeMachine1);
   coffeeMachine1.fillCoffeeBeans(80);
   console.log(coffeeMachine1);
+
+  class User {
+    get fullName(): string {
+      return `${this.firstName} ${this.lastName}`;
+    }
+    private internalAge = 4;
+    get age(): number {
+      return this.internalAge;
+    }
+    set age(num: number) {
+      if (num < 0) {
+        throw new Error("입력한 나이가 유효하지 않습니다.");
+      }
+      this.internalAge = num;
+    }
+    constructor(public firstName: string, private lastName: string) {}
+  }
+  const user = new User("Steve", "Jobs");
+  user.firstName = "Ellie";
+  console.log(user);
+  console.log(user.fullName);
+  user.age = 100;
+  console.log(user.age);
 }
