@@ -40,4 +40,6 @@
   const bobAfterPay = pay(bob);
   // Property 'workPartTime' does not exist on type 'Employee'.
   // bobAfterPay.workPartTime()
+
+  bobAfterPay.workPartTime();
 }
